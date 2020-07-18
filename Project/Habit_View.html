@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+  <html>
+    <head	>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://		maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      
+      <script type="text/javascript" src="./login.js"></script>
+
+      <title>New Habit</title>
+      <style>
+      
+        /* Nav Bar */
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color:rgba(182,221,255,0.75);
+          position: -webkit-sticky; /* Safari */
+          position: sticky;
+          top: 0;
+        }
+
+        li {
+          float: left;
+        }
+
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        li a:hover {
+          background-color:rgba(182,221,255,0.75);
+        }
+
+        .active {
+          background-color: rgba(182,221,255,0.75);
+        }
+
+        .center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          /* width: 50%; */
+        }
+
+        /* lil blue buttons info - months */
+        .btn-info{
+          font-family: Raleway-SemiBold;
+          font-size: 13px;
+          color: rgba(182,221,255,0.75);
+          letter-spacing: 1px;
+          line-height: 15px;
+          border: 2px solid rgba(182,221,255,0.75);;
+          border-radius: 40px;
+          background: transparent;
+          transition: all 0.3s ease 0s;
+        }
+
+        .btn-info:hover {
+          color: #FFF;
+          background: rgba(182,221,255,0.75);
+          border: 2px solid rgba(182,221,255,0.75);
+        }
+
+        .card-text{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        .card-title{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        .responsive {
+          width: 100%;
+          height: auto;
+        }
+
+    
+    .main {
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 400px;
+        margin: 1em auto;
+        border-radius: 1.5em;
+        /* box-shadow: 0px 11px 25px 2px rgba(0, 0, 0, 0.14); */
+    }
+    
+    .sign {
+        padding-top: 40px;
+        color: rgb(134, 178, 218);
+        font-weight: bold;
+        font-size: 23px;
+    }
+    
+    
+    .submit {
+      cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: rgba(182,221,255,0.75);
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-left: 35%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+
+
+  /* buttons */
+  .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button3 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.button3:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.button4:hover {background-color: #e7e7e7;}
+
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}
+.button1 {border-radius: 8px;}
+.button2 {border-radius: 8px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 8px;}
+.button5 {border-radius: 8px;}
+
+
+
+      </style>
+      
+      <ul>
+        <li><a class="active" href="happyHome.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#myModal" data-toggle="modal" onclick="openModal()">Login</a></li>
+        <li><a href="#myModal2"  data-toggle="modal" onclick="openModal()">Sign Up</a></li>
+      </ul>
+
+<script>
+  function toggleText() {
+  var text = document.getElementById("demo");
+  if (text.style.display === "none") {
+    text.style.display = "block";
+  } 
+  else {
+    text.style.display = "none";
+  }
+  }
+</script>
+
+
+
+    </head>
+    <body style="font-family: century gothic; font-size: 20; color: rgb(102, 145, 185); ">
+   
+      <!-- logo -->
+      <div class="center">
+        <img id="logo-main" src="daily_checkIn.jpg" width="450" height= "270" alt="Logo Thing main logo" class="center" style="margin-top: 25px;">
+
+            <p class = "sign" align="center" id="date" style="font-family: century gothic"> </p>
+
+                <!-- Displays current date -->
+                <script>
+                var d = new Date();
+                document.getElementById("date").innerHTML = d.toDateString();
+                </script>
+
+            <p class="sign" align="center" style="font-family: century gothic">Streaks</p>
+
+
+            <div class="container-fluid" align = "center">
+                <!-- new buttons -->
+                <p id='demo' href="#" style='display: none'>Streak: x days</p>
+                <button class="button button1" onclick="toggleText()">Habit 1</button>
+                <br>
+
+                <p id='demo' href="#" style='display: none'>Streak: y days</p>
+                <button class="button button2" onclick="toggleText()">Habit 2</button>
+                <br>
+
+                <p id='demo' href="#" style='display: none'>Streak: z days</p>
+                <button class="button button3" onclick="toggleText()">Habit 3</button>
+                <br>
+
+                <p id='demo' href="#" style='display: none'>Streak: a days</p>
+                <button class="button button4" onclick="toggleText()">Habit 4</button>
+                <br>
+
+                <p id='demo' href="#" style='display: none'>Streak: b days</p>
+                <button class="button button5" onclick="toggleText()">Habit 5</button>
+                <br>
+                <!-- new buttons -->
+
+
+
+          </div>
+            
+
+          </div>
+  
+
+      <div class="container">
+        <h2 class="sign" align="center">Month</h2>
+        <table class="table">
+          <tdbody>
+            <tr>
+              <td>                
+              <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Jan</a>
+              </td>
+              <td>                
+              <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Feb</a>
+              </td>
+              <td>                
+              <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Mar</a>
+              </td>
+              <td>                
+              <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Apr</a>
+              </td>
+              <td>                
+              <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">May</a>
+              </td>
+              <td>                
+              <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Jun</a>
+              </td>
+              <td>                
+              <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Jul</a>
+              </td>
+              <td>                
+              <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Aug</a>
+              </td>
+              <td>                
+              <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Oct</a>
+              </td>
+              <td>                
+              <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Nov</a>
+              </td>
+              <td>                
+              <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Dec</a>
+              </td>
+
+        <table class="table table-bordered table-responsive table-hover" class="sign">
+          <tbody >
+            <tr>
+              <td>Habit 1</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td>29</td>
+              <td>30</td>
+              <td>31</td>
+
+
+            </tr>
+            <tr>
+              <td>Habit 2</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td>29</td>
+              <td>30</td>
+              <td>31</td>
+            </tr>
+            <tr>
+              <td>Habit 3</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td>29</td>
+              <td>30</td>
+              <td>31</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+     </div>
+
+    <script src="script2.js"></script>
+    </body>
+
+                <!-- HTML CODE FOR LOGIN -->
+
+                <div id="myModal" class="modal fade">
+                  <div class="modal-dialog modal-login">
+                    <div class="modal-content">
+                      <div class="main">
+                        <p class="sign" align="center">Login</p>
+                        <form class="form1">
+                          <input class="un " type="text" align="center" placeholder="Username">
+                          <input class="pass" type="password" align="center" placeholder="Password">
+                          <a class="submit" type = "button" href = "#" onClick="onClickFunction()" align="center">Sign in</a>
+                          <p class="forgot" align="center"><a href="#">Forgot Password?</p>        
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <br /><br /><br />
+            
+                <!-- HTML CODE FOR SIGN IN -->
+            
+                <div id="myModal2" class="modal fade">
+                  <div class="modal-dialog modal-login">
+                    <div class="modal-content">
+                      <p class="sign" align="center">Sign Up</p>
+                      <div class="modal-body">
+                          <input type="text" id="name" class="un" name="firstName" placeholder="First Name"
+                            required=/"required">
+                          <input type="text" id="lastName"class="un" name="lastName" placeholder="Last Name"
+                            required="required">
+                          <input type="email" id="email" class="un" name="E-Mail" placeholder="E-Mail"
+                            required="required">
+                          <input id="psw" id="pass" type="password" class="pass" name="password" placeholder="Password"
+                            required="required">
+                          <input id="cpsw" id="pass"type="password" class="pass" name="confirm password"
+                            placeholder="Confirm Password" required="required">
+                          <button id="my_submit_button" class="submit" 
+                            onClick="onClickFunction()">Sign Up</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br /><br /><br />
+
+    </html>
+
